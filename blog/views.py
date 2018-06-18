@@ -1,3 +1,4 @@
+from django.views.generic.base import TemplateView
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
@@ -39,3 +40,8 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+# Home page
+class HomePage(TemplateView)
+    template_name = 'blog/home.html'
+
